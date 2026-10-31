@@ -3,7 +3,7 @@ class AppConstants {
   static const String appVersion = '1.0.0';
 
   // Legitimate Public Domain & Open Library APIs
-  static const String gutendexBaseUrl = 'https://gutendex.com/books';
+  static const String gutendexBaseUrl = 'https://gutendex.com/books/';
   static const String openLibrarySearchUrl = 'https://openlibrary.org/search.json';
   static const String openLibraryCoverBaseUrl = 'https://covers.openlibrary.org/b/id';
   static const String internetArchiveSearchUrl = 'https://archive.org/advancedsearch.php';

@@ -48,9 +48,6 @@ android {
                 keyPassword = keyPasswordProp
                 storeFile = file(storeFileProp)
                 storePassword = storePasswordProp
-            } else {
-                // Fallback to debug keystore if release keystore properties are missing
-                signingConfig = signingConfigs.getByName("debug")
             }
         }
     }

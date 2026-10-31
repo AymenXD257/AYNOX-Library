@@ -32,13 +32,13 @@ class InternetArchiveSource implements BookSource {
         ? query.trim().replaceAll('"', '')
         : (category != null && category != 'All' ? category : 'classic literature');
 
-    // Filter to public domain texts
-    String archiveQuery = '($cleanQuery) AND mediatype:(texts) AND (language:eng OR language:ara OR language:fre)';
+    // Filter to public domain open texts (excluding lending-restricted DRM items)
+    String archiveQuery = '($cleanQuery) AND mediatype:(texts) AND NOT access-restricted-item:true AND (language:eng OR language:ara OR language:fre)';
     if (language != null && language.isNotEmpty && language != 'All') {
       final langCode = language == 'Arabic' || language == 'ar'
           ? 'ara'
           : (language == 'French' || language == 'fr' ? 'fre' : 'eng');
-      archiveQuery = '($cleanQuery) AND mediatype:(texts) AND language:$langCode';
+      archiveQuery = '($cleanQuery) AND mediatype:(texts) AND NOT access-restricted-item:true AND language:$langCode';
     }
 
     final queryParams = <String, String>{

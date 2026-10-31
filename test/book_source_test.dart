@@ -144,14 +144,14 @@ void main() {
   group('ArabicHeritageSource Unit Tests', () {
     test('Contains verified legitimate Arabic classics with valid download URLs', () async {
       final source = ArabicHeritageSource();
-      final books = await source.search('حي بن يقظان');
+      final books = await source.search('ابن خلدون');
 
       expect(books.isNotEmpty, true);
-      final hayy = books.firstWhere((b) => b.title.contains('حي بن يقظان'));
-      expect(hayy.author, 'ابن طفيل الأندلسي');
-      expect(hayy.language, 'ar');
-      expect(hayy.downloadUrls.isNotEmpty, true);
-      expect(hayy.rightsStatus, 'public_domain');
+      final book = books.firstWhere((b) => b.title.contains('ابن خلدون'));
+      expect(book.author, 'عبد الرحمن بن خلدون');
+      expect(book.language, 'ar');
+      expect(book.downloadUrls.isNotEmpty, true);
+      expect(book.rightsStatus, 'public_domain');
     });
   });
 
