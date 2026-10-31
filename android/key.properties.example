@@ -1,0 +1,8 @@
+# AYNOX Library - Production Release Signing Template
+# Copy this file to "android/key.properties" and fill in your actual keystore details.
+# DO NOT commit key.properties or keystore files to source control!
+
+storePassword=YOUR_KEYSTORE_PASSWORD
+keyPassword=YOUR_KEY_PASSWORD
+keyAlias=YOUR_KEY_ALIAS
+storeFile=/path/to/your/upload-keystore.jks
